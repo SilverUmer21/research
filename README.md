@@ -6,7 +6,7 @@ a DeBERTa-v3 model that tags text with 28 emotions at once (GoEmotions, macro F1
 Each of the 28 emotions is a lantern on a small floating island. A sentence slams down onto the
 dais, and the lanterns light up as strongly as the model scores each emotion.
 
-https://github.com/SilverUmer21/emotion-lanterns/raw/main/renders/emotion-lanterns.mp4
+**[Watch the video](renders/emotion-lanterns.mp4)** (MP4, 20 s, 1080 × 1350)
 
 | "thank you" | "see you at 5" |
 |---|---|
