@@ -1,0 +1,4 @@
+__pycache__/
+*.py[cod]
+renders/
+AFTERLIGHT_picture.mp4

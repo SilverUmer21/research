@@ -1,0 +1,277 @@
+{
+  "edition": "AFTERLIGHT / Three-car Vein Series",
+  "cars": [
+    "CINDER / 07",
+    "GLACIER / 08",
+    "VESPER / 09"
+  ],
+  "selected_delivery": "Original three-car film with colored lava veins, blaze and powerful twin boosters",
+  "video": {
+    "file": "AFTERLIGHT_30s.mp4",
+    "seconds": 30,
+    "resolution": "1920x1080",
+    "fps": 30,
+    "audio": "48 kHz stereo AAC"
+  },
+  "source_archive_sha256": "ab32a5112b058a636e7bc8eb41fc9eaf6e6ceafd2cc0a57a954c9ffca443f429",
+  "files": [
+    {
+      "path": "afterlight/AFTERLIGHT_30s.mp4",
+      "bytes": 22639295,
+      "git_blob_sha": "ec33a54529d2be8e4db8002ca922e14a149a863a",
+      "sha256": "60b5b2e7850701b1ed9d52d100380150ef7027b851671c1de9f41b62f73c6e69"
+    },
+    {
+      "path": "afterlight/AFTERLIGHT_Lighting_Comparison.png",
+      "bytes": 446118,
+      "git_blob_sha": "a8fd98ca00c1488cfb99c9ccdb08485665c3fbb8",
+      "sha256": "d65de63ab533f12de8356cb08fef9e396eb7f806fdf3c9222d7d3b774abd7fe5"
+    },
+    {
+      "path": "afterlight/AFTERLIGHT_Preview.png",
+      "bytes": 1381948,
+      "git_blob_sha": "908f7f108e95a17d819d6ee43fe47748b689621e",
+      "sha256": "a582dcbddf99077cb4e5091de16e559b68c8ca79496a5ef8e4b67bd85286b168"
+    },
+    {
+      "path": "afterlight/AFTERLIGHT_Source.zip",
+      "bytes": 8136594,
+      "git_blob_sha": "c54f4db7393253e92a5d2ac766db543d8a56b675",
+      "sha256": "ab32a5112b058a636e7bc8eb41fc9eaf6e6ceafd2cc0a57a954c9ffca443f429"
+    },
+    {
+      "path": "afterlight/AFTERLIGHT_score.wav",
+      "bytes": 5760044,
+      "git_blob_sha": "6067ea8958b7392577a4d7ffba95f2cfa579d271",
+      "sha256": "7770e92e53bb08e5da69ad00358cada82dca48e4aeaf67e167aae3366c6f1ad4"
+    },
+    {
+      "path": "afterlight/COLOR_AND_MOTION_STUDY.md",
+      "bytes": 3579,
+      "git_blob_sha": "83693c968e215a6e91135b7d41780f42d57bf372",
+      "sha256": "2239221e91f7da987b023088aa23506c60de80ca991a102260a5d73d128bdfa3"
+    },
+    {
+      "path": "afterlight/README.md",
+      "bytes": 4604,
+      "git_blob_sha": "a13c26afec0209304fd74ee49e1f41c0c860f979",
+      "sha256": "4733e34e9efb9dbf1f2648d28487d3679d394a6bf96cbfa09416f9662cda5514"
+    },
+    {
+      "path": "afterlight/THIRD_PARTY_NOTICES.txt",
+      "bytes": 1576,
+      "git_blob_sha": "b6d2f90c1510c589a37411561210d1b9bc28a04b",
+      "sha256": "c272136b7e75105ebb86f0e74c237c4e757034219b2b1210f7046a88180855c8"
+    },
+    {
+      "path": "afterlight/atlas.png",
+      "bytes": 18832,
+      "git_blob_sha": "f6fece62f38d0883b3e2e864de1e88bceb73bb58",
+      "sha256": "444f2d53c5bab781cda5d8447a80fdc70df0668d949c58a9e4e4cb732c6c2cc8"
+    },
+    {
+      "path": "afterlight/boosters.py",
+      "bytes": 2031,
+      "git_blob_sha": "cb781cb34a8e4ea1064393b609eea580f0eef27f",
+      "sha256": "1787496ad2b69e7fcef10a7451e56d2077abf7b636f05af1f7ebb0854b30e19b"
+    },
+    {
+      "path": "afterlight/car_geometry.py",
+      "bytes": 12139,
+      "git_blob_sha": "87ab993c5b9d7c68191a8e390d01d4262247f691",
+      "sha256": "13b6c0bc5963011cfd1bac4562d1cf608e25beaf9a9565042660ed331df6cbc6"
+    },
+    {
+      "path": "afterlight/engine.py",
+      "bytes": 13287,
+      "git_blob_sha": "444b5abe0cd1452715a3b6bd44481a2291c8a9a0",
+      "sha256": "49c8d7943b70ae537af24f6ff5fd221ccaa919f069c19585d0e90cb5fc9ee43d"
+    },
+    {
+      "path": "afterlight/export_model.py",
+      "bytes": 4371,
+      "git_blob_sha": "fe12efae8e4f81bb3c2a3fa568ab21c005f04ca6",
+      "sha256": "93c6c7f16a30043c1857da8f6ff1a863391d7499bb6536e4f075e71ef3c883c3"
+    },
+    {
+      "path": "afterlight/fonts/BarlowCondensed-Bold.ttf",
+      "bytes": 109912,
+      "git_blob_sha": "9e480f467d703009e3abfce290b2ec2b7d24e188",
+      "sha256": "e476562ec9c1e16cf16475895b511f08c804f438cc9a9f80a44ea50a0eeb5b65"
+    },
+    {
+      "path": "afterlight/fonts/OFL.txt",
+      "bytes": 4378,
+      "git_blob_sha": "19a65f67f6a7cd443aa89ae0a8cf09bbfdadea68",
+      "sha256": "f15bcb147f45ca7edb47109f4a887a3eecd09d29fc251f3fbb2d748b32abdaa2"
+    },
+    {
+      "path": "afterlight/master.py",
+      "bytes": 1301,
+      "git_blob_sha": "158a5487ed99d3353ebfce073d3a4b65c99d24d1",
+      "sha256": "43482c9a32fa235ec47b20053e18734b13c1c7a190e52d0ffbee69f3dc2df9a3"
+    },
+    {
+      "path": "afterlight/models/CINDER.glb",
+      "bytes": 5352516,
+      "git_blob_sha": "a3a1311b3a07225908cdcd58cbc8064c29c23289",
+      "sha256": "cf867aa67a0ffb501b682c1aee044971ca32b16a30603c3344706b0867001c2c"
+    },
+    {
+      "path": "afterlight/models/GLACIER.glb",
+      "bytes": 5318396,
+      "git_blob_sha": "cb3493fcb5729bdee8116c66aa465e77d47cb872",
+      "sha256": "69d6d1820d2bd6a5aa2e799bdfe563da40bccc6ffab6e4deaca5f3f850bef6a5"
+    },
+    {
+      "path": "afterlight/models/VESPER.glb",
+      "bytes": 5348628,
+      "git_blob_sha": "c90aefc30b8ec03b1d5dd6e8577fbcd616201582",
+      "sha256": "6ef4053929c7c0080aa2bce6aa150b3eede9ddb8a0e435a875b34c5e537b2173"
+    },
+    {
+      "path": "afterlight/requirements.txt",
+      "bytes": 23,
+      "git_blob_sha": "7b0ce1a2a53669e822e334ed0c70a87ddad218ac",
+      "sha256": "67a9c15a6fa737b3ea8f2920b6f8cf51cdbbbdaee9ee4545db64e21fa15ae7ac"
+    },
+    {
+      "path": "afterlight/shaders/blaze.frag",
+      "bytes": 348,
+      "git_blob_sha": "5e9812ce207d76857ec7bec760d93d9e546d0996",
+      "sha256": "1cc083a22a4583556e1fed5edffbbd09790ba25d8bd668a949b91a26fceffce7"
+    },
+    {
+      "path": "afterlight/shaders/blaze.vert",
+      "bytes": 787,
+      "git_blob_sha": "f7ee8e55fa4595c22ccacc9dcb08c427cf5193b6",
+      "sha256": "150361a85689c746cd30c16635654bef683ed781d0f16d52dce0426ab4966e90"
+    },
+    {
+      "path": "afterlight/shaders/bloom.frag",
+      "bytes": 388,
+      "git_blob_sha": "73396ca46f8d6733ff97ba2bc68016a49d29a8d6",
+      "sha256": "e2e282113524ad8c15199fd8fdd5e70f405b2fd77295153ca5ee3b2209b96150"
+    },
+    {
+      "path": "afterlight/shaders/common.glsl",
+      "bytes": 1595,
+      "git_blob_sha": "aeb9e0092a7b2a1e71b6ab560684423805b27d38",
+      "sha256": "79b8ffc5c5a5f98f1a9ea9aaeb6ea7e2865288a6136f52fef1d6d03deacd7b5b"
+    },
+    {
+      "path": "afterlight/shaders/composite.frag",
+      "bytes": 707,
+      "git_blob_sha": "bfdc2430d252206b8b71e1848da22c9acf44e732",
+      "sha256": "e2764120aadc847c4d91a665416c77768be8cd68075aebde7e951d6cb213eb77"
+    },
+    {
+      "path": "afterlight/shaders/floor.frag",
+      "bytes": 1235,
+      "git_blob_sha": "ec83b5352a3290416b46381b6ab7418da6e5fdc8",
+      "sha256": "392c6362df89775ba4be4dae8fa41dee38f7f6e0f0aa5d5363c29b09dfd2b25d"
+    },
+    {
+      "path": "afterlight/shaders/full.vert",
+      "bytes": 127,
+      "git_blob_sha": "9dc704f1916af9edfcc43d4ebf041d4731e75254",
+      "sha256": "7230f4e402fecf01fc49d2a893a09670f2bf0740c60fc2bd658b19cceb6d3992"
+    },
+    {
+      "path": "afterlight/shaders/glass.frag",
+      "bytes": 725,
+      "git_blob_sha": "37861ad4f9f263b29658caf42b5ca91cfe58432b",
+      "sha256": "355f41263c9927a710717ed90d8148384962920568dbb8307de3a73c80a17ea0"
+    },
+    {
+      "path": "afterlight/shaders/jet.frag",
+      "bytes": 817,
+      "git_blob_sha": "9d3067b370307ca21a87d264fcb5b74b7a5f7cc2",
+      "sha256": "56251a2d57ee2457ce8a6b1e3180f6f0740dd070f2f84ee0871a79537c34d0f1"
+    },
+    {
+      "path": "afterlight/shaders/jet.vert",
+      "bytes": 653,
+      "git_blob_sha": "bc9ae228ba810dcead71ee608f585ba9792914df",
+      "sha256": "525f178f93d654f2a08fef45cf6155915cc763bee48f8cfa0773b47f9512f88f"
+    },
+    {
+      "path": "afterlight/shaders/object.frag",
+      "bytes": 4698,
+      "git_blob_sha": "b7fb260458919e8ecc9225ed960191d1a572abb4",
+      "sha256": "8c96e9baefe03fe4502e6f4036fa017535319ba5aff4e63e45549c640003a499"
+    },
+    {
+      "path": "afterlight/shaders/object.vert",
+      "bytes": 499,
+      "git_blob_sha": "691acd659b4f0a823ee1a07ad35640f6494b0ded",
+      "sha256": "3da1a9d8f4f089b1192ac67af840195b58eb7f19418554f0af7e6f68b56e3d6e"
+    },
+    {
+      "path": "afterlight/shaders/plasma.frag",
+      "bytes": 1358,
+      "git_blob_sha": "ca0ed1a8ede4771accae68ee9165cc1e998e3b10",
+      "sha256": "270950c17424a648c6bf9b661118555a3be723d9ebe0a3b294a4dbed24fbe8b2"
+    },
+    {
+      "path": "afterlight/shaders/shadow.frag",
+      "bytes": 147,
+      "git_blob_sha": "890451dead5462d83df14d0c65b702da70dcbe4a",
+      "sha256": "0044cd9d0335f84644678832795a568bad0c9ca107ed33ad108a83c8221810dc"
+    },
+    {
+      "path": "afterlight/shaders/sky.frag",
+      "bytes": 102,
+      "git_blob_sha": "eafb3ba0ccb6ff352382281d829ba22d6119689d",
+      "sha256": "0dee33b0ca67434e8558e5abd076ede4dbfe596b08dd7e2722dd2d660e4d3039"
+    },
+    {
+      "path": "afterlight/shaders/spark.frag",
+      "bytes": 234,
+      "git_blob_sha": "193d1ab073d614517918f5d14d274167a8a4a86e",
+      "sha256": "d40154fd224718fad01abcfe5a8af08b31e4d54c8bfd9d6a2c554a593cd6d508"
+    },
+    {
+      "path": "afterlight/shaders/spark.vert",
+      "bytes": 669,
+      "git_blob_sha": "835827a5ca4e8da528187045f946210236a9c713",
+      "sha256": "a8998cbe839ccb92939dcced029e8a05353ea86ade22d8a25920cb8ba4aa513c"
+    },
+    {
+      "path": "afterlight/shaders/vein.frag",
+      "bytes": 590,
+      "git_blob_sha": "86f5821b2dadcfe19dc6515487f157edcb795cf8",
+      "sha256": "9e61523a4571c52c33c118edc73d6120ec576f676da1ce0875f7a7316131085d"
+    },
+    {
+      "path": "afterlight/showcase.py",
+      "bytes": 15922,
+      "git_blob_sha": "4e058dd48c969405dcaa75c7b5f213f6b5c5075e",
+      "sha256": "0c84f980d24c4a2368fd929b3aa487d4d001d0b2b6318683b5e5ca2e8ac1fead"
+    },
+    {
+      "path": "afterlight/sound.py",
+      "bytes": 3683,
+      "git_blob_sha": "42c2598f44e21a751afe6bf77a6311415dc29f57",
+      "sha256": "9cc64273f0deba975b1db3112f969585d72529e23c9e268eca5f023a21e2dac5"
+    },
+    {
+      "path": "afterlight/styles.py",
+      "bytes": 1336,
+      "git_blob_sha": "c9d49709ffeffa43f6d0bb1bb034317265a1d951",
+      "sha256": "8b643f8ac99605ee3d16ac27744b30ff66cc175d321497e28dbb7072fe34bb66"
+    },
+    {
+      "path": "afterlight/veins.py",
+      "bytes": 5058,
+      "git_blob_sha": "52b5cef5cb0c2eb89de51204dbb93c118afde21f",
+      "sha256": "0189cfec6b7ad3ebb1a7137e58883121cb92001e25e55e9d1fa681479ee1e1cd"
+    },
+    {
+      "path": "afterlight/verify_delivery.py",
+      "bytes": 5344,
+      "git_blob_sha": "21cadd21b93763db0c8ebac7e0c8fe0110cdf98e",
+      "sha256": "e2e2d7af3bfee65ccca4a0e4e221ad30fddbe7926c1d817c3783cfdc8a46ce00"
+    }
+  ]
+}
