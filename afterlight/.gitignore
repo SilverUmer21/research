@@ -2,3 +2,5 @@ __pycache__/
 *.py[cod]
 renders/
 AFTERLIGHT_picture.mp4
+AFTERLIGHT_30s_original.mp4
+*.tmp

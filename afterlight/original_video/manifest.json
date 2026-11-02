@@ -1,0 +1,18 @@
+{
+  "edition": "Original three-car Vein Series",
+  "output": "AFTERLIGHT_30s_original.mp4",
+  "bytes": 22639295,
+  "sha256": "60b5b2e7850701b1ed9d52d100380150ef7027b851671c1de9f41b62f73c6e69",
+  "parts": [
+    {
+      "file": "AFTERLIGHT_30s.mp4.part01",
+      "bytes": 11319648,
+      "sha256": "a57299bea418b59f4291fb9e531c40443a2de4568e6641d9b73de6534c585b4b"
+    },
+    {
+      "file": "AFTERLIGHT_30s.mp4.part02",
+      "bytes": 11319647,
+      "sha256": "08150d127b52dfab0aab30858d45beae2f1b17863aefd980a5c6fd2b777c68d7"
+    }
+  ]
+}
