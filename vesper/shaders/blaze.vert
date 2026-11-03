@@ -6,7 +6,7 @@ void main(){
  float u=param.x,a=param.y;layer=param.z;
  float distance=seed<.5?.35:(seed<1.5?.74:(seed<2.5?1.05:.50));
  float flow=fract(distance*.48-flowPhase+(seed>2.5?.12:0.));
- heat=exp(-pow((flow-.5)/.15,2.))*step(distance,fillFront)*(1.-cool);
+ heat=exp(-sq((flow-.5)/.15))*step(distance,fillFront)*(1.-cool);
  float flicker=.80+.20*sin(time*12.+seed*2.+u*8.);
  float h=.03+boost*.14+charge*.04+heat*.12;
  float radius=(.020+boost*.014)*pow(max(0.,1.-u),.7)*(layer<.5?.50:1.);

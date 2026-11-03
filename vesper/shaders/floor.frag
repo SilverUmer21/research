@@ -38,13 +38,13 @@ void main(){
  col+=lin(vec3(.55,.12,.75))*seam*(.010+.035*charge)*(1.-board);
  col+=reflected*(.10+fr*.20+wet*.22);
  // Lane dashes at the edges, glowing faintly magenta, smeared by speed.
- float lane=exp(-pow((abs(W.z)-3.1)/.05,2.));
+ float lane=exp(-sq((abs(W.z)-3.1)/.05));
  float dash=smoothstep(.0,.15,sin(P.x*1.3))*(1.-speed*.02)+speed*.02;
  col+=energyColor()*lane*dash*(.05+.10*charge)*(1.-board);
  // Light pools: the heart through the glass, headlamps ahead, plumes behind.
  vec2 c=W.xz;
  col+=energyColor()*exp(-length(c-vec2(-.24,0.))*2.2)*.05*heartI;
- col+=lin(vec3(.70,.55,1.))*lampI*exp(-pow((c.x-4.2)/2.2,2.)-pow(c.y/1.2,2.))*.10;
+ col+=lin(vec3(.70,.55,1.))*lampI*exp(-sq((c.x-4.2)/2.2)-sq(c.y/1.2))*.10;
  for(int i=0;i<2;i++){
    float zz=(float(i)*2.-1.)*.53;float len=.2+boost*3.4;
    vec2 q=c-vec2(-2.9-len*.45,zz);float p=exp(-q.x*q.x/(len*len*.25+.2)-q.y*q.y*4.);
@@ -63,7 +63,7 @@ void main(){
    float reached=1.-smoothstep(front-1.2,front,rad);
    float core=exp(-dl*dl*900.),glow=exp(-dl*dl*35.);
    float pulseRun=pow(.5+.5*sin(rad*2.2-time*5.),8.);
-   float edge=exp(-pow((rad-front)/.6,2.));
+   float edge=exp(-sq((rad-front)/.6));
    vec3 lc=magma(.55+.35*pulseRun+.3*edge);
    col+=lc*(core*.9+glow*.10)*reached;
    vec2 node=abs(g-round(g))*boardSpacing;float nd=length(node);

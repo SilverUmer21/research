@@ -13,12 +13,12 @@ void main(){
  float cs=sqrt(max(0.,1.-across*across));
  // Flood front: a white-hot head with a short tail, then settled lava behind it.
  float filled=1.-smoothstep(fillFront-.05,fillFront+.02,x+M);
- float head=exp(-pow((x+M-fillFront)/.07,2.))*step(.02,fillFront)*(1.-step(3.2,fillFront));
+ float head=exp(-sq((x+M-fillFront)/.07))*step(.02,fillFront)*(1.-step(3.2,fillFront));
  float drained=smoothstep(drainFront-.25,drainFront+.05,x);
  float alive=filled*(1.-drained*.92);
  // Travelling pulse, phase-integrated on the CPU so it never jumps when boost changes.
  float flow=fract(x*.48-flowPhase+M);
- float pulse=exp(-pow((flow-.5)/.075,2.));
+ float pulse=exp(-sq((flow-.5)/.075));
  // Crust plates drift with the flow; cracks between them glow hotter than the plates.
  vec2 cp=vec2(x*26.-flowPhase*9.,across*1.6);
  vec2 vc=cell(cp);

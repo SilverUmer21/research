@@ -4,6 +4,7 @@ uniform vec3 eye,lightDir;
 uniform mat4 carFrame,carInverse;
 uniform vec2 resolution;
 const float PI=3.14159265359;
+float sq(float x){return x*x;}
 vec3 lin(vec3 c){return mix(c/12.92,pow((c+.055)/1.055,vec3(2.4)),step(vec3(.04045),c));}
 vec3 srgb(vec3 c){return mix(c*12.92,1.055*pow(max(c,0.),vec3(1./2.4))-.055,step(vec3(.0031308),c));}
 float hash(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}

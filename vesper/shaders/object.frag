@@ -20,7 +20,7 @@ void main(){
  vec3 s=L.xyz/L.w*.5+.5;float sh=0.;
  if(s.x>0.&&s.x<1.&&s.y>0.&&s.y<1.&&s.z<1.){for(int x=-1;x<=1;x++)for(int y=-1;y<=1;y++)sh+=step(texture(shadowmap,s.xy+vec2(x,y)*2.2/3072.).r,s.z-max(.00055,.0012*(1.-dot(n,lightDir))));sh/=9.;}
  float core=1.-smoothstep(-.25,1.,dot(n,lightDir));float shadow=max(core,sh);
- float bounce=smoothstep(-1.,1.,-n.y)*pow(max(0.,(1.7-max(W.y,0.))/1.7),2.);
+ float bounce=smoothstep(-1.,1.,-n.y)*sq(max(0.,(1.7-max(W.y,0.))/1.7));
  vec3 bounced=mix(base,lin(vec3(.48,.10,.64)),bounce*.32);
  // The key light is dimmed while the car is "asleep" so the energy can light it.
  float wake=.30+.70*smoothstep(.0,1.,charge);
