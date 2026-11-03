@@ -1,5 +1,7 @@
 # Emotion Lanterns
 
+> Also on this branch: **[magenta work](MAGENTA_WORK.md)**, the refined Vesper film and the HIJACK TWELVE game concept.
+
 A 20-second motion piece for [emotion-detection-in-text](https://github.com/SilverUmer21/emotion-detection-in-text),
 a DeBERTa-v3 model that tags text with 28 emotions at once (GoEmotions, macro F1 0.49).
 

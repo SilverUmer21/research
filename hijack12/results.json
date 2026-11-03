@@ -1,0 +1,390 @@
+{
+  "period": 12,
+  "games_even": 300,
+  "games_skill": 200,
+  "bots": "even: depth-2 vs depth-2 (5% random); skill: depth-2 (5%) vs depth-1 (20%), colours alternate; 2 random opening turns per side",
+  "seeds": {
+    "12": {
+      "classic": {
+        "even": {
+          "games": 300,
+          "p0_win": 0.33,
+          "p1_win": 0.3,
+          "draw": 0.37,
+          "turns": 59.846666666666664,
+          "comeback": 0.2962962962962963,
+          "lead_changes": 1.4233333333333333,
+          "hijacks": 0.0,
+          "hijack_landed": 0.0
+        },
+        "skill": {
+          "games": 200,
+          "p0_win": 0.405,
+          "p1_win": 0.44,
+          "draw": 0.155,
+          "turns": 53.79,
+          "comeback": 0.3254437869822485,
+          "lead_changes": 1.25,
+          "hijacks": 0.0,
+          "hijack_landed": 0.0,
+          "strong_win": 0.785,
+          "weak_win": 0.06
+        },
+        "seconds": 53.3
+      },
+      "swap": {
+        "even": {
+          "games": 300,
+          "p0_win": 0.5166666666666667,
+          "p1_win": 0.25,
+          "draw": 0.23333333333333334,
+          "turns": 49.593333333333334,
+          "comeback": 0.5173913043478261,
+          "lead_changes": 1.6733333333333333,
+          "hijacks": 7.36,
+          "hijack_landed": 0.4288949275362319
+        },
+        "skill": {
+          "games": 200,
+          "p0_win": 0.45,
+          "p1_win": 0.33,
+          "draw": 0.22,
+          "turns": 48.61,
+          "comeback": 0.4935897435897436,
+          "lead_changes": 1.295,
+          "hijacks": 7.02,
+          "hijack_landed": 0.37393162393162394,
+          "strong_win": 0.76,
+          "weak_win": 0.02
+        },
+        "seconds": 46.8
+      },
+      "swap_plus": {
+        "even": {
+          "games": 300,
+          "p0_win": 0.52,
+          "p1_win": 0.35,
+          "draw": 0.13,
+          "turns": 47.63,
+          "comeback": 0.2988505747126437,
+          "lead_changes": 1.4966666666666666,
+          "hijacks": 6.763333333333334,
+          "hijack_landed": 0.5377033021192705
+        },
+        "skill": {
+          "games": 200,
+          "p0_win": 0.51,
+          "p1_win": 0.465,
+          "draw": 0.025,
+          "turns": 36.585,
+          "comeback": 0.49230769230769234,
+          "lead_changes": 1.485,
+          "hijacks": 5.135,
+          "hijack_landed": 0.6192794547224927,
+          "strong_win": 0.9,
+          "weak_win": 0.075
+        },
+        "seconds": 359.1
+      },
+      "place": {
+        "even": {
+          "games": 300,
+          "p0_win": 0.37333333333333335,
+          "p1_win": 0.3233333333333333,
+          "draw": 0.30333333333333334,
+          "turns": 52.78,
+          "comeback": 0.2822966507177033,
+          "lead_changes": 1.37,
+          "hijacks": 7.746666666666667,
+          "hijack_landed": 0.4307228915662651
+        },
+        "skill": {
+          "games": 200,
+          "p0_win": 0.42,
+          "p1_win": 0.495,
+          "draw": 0.085,
+          "turns": 47.485,
+          "comeback": 0.34972677595628415,
+          "lead_changes": 1.27,
+          "hijacks": 6.77,
+          "hijack_landed": 0.40841949778434267,
+          "strong_win": 0.88,
+          "weak_win": 0.035
+        },
+        "seconds": 100.4
+      },
+      "earned": {
+        "even": {
+          "games": 300,
+          "p0_win": 0.23333333333333334,
+          "p1_win": 0.37333333333333335,
+          "draw": 0.3933333333333333,
+          "turns": 46.586666666666666,
+          "comeback": 0.4725274725274725,
+          "lead_changes": 2.53,
+          "hijacks": 9.693333333333333,
+          "hijack_landed": 0.6292984869325997
+        },
+        "skill": {
+          "games": 200,
+          "p0_win": 0.4,
+          "p1_win": 0.45,
+          "draw": 0.15,
+          "turns": 50.06,
+          "comeback": 0.5,
+          "lead_changes": 1.595,
+          "hijacks": 8.125,
+          "hijack_landed": 0.552,
+          "strong_win": 0.84,
+          "weak_win": 0.01
+        },
+        "seconds": 241.1
+      },
+      "swap_guard": {
+        "even": {
+          "games": 300,
+          "p0_win": 0.35,
+          "p1_win": 0.3333333333333333,
+          "draw": 0.31666666666666665,
+          "turns": 57.52333333333333,
+          "comeback": 0.424390243902439,
+          "lead_changes": 1.66,
+          "hijacks": 7.093333333333334,
+          "hijack_landed": 0.4309210526315789
+        },
+        "skill": {
+          "games": 200,
+          "p0_win": 0.505,
+          "p1_win": 0.405,
+          "draw": 0.09,
+          "turns": 52.69,
+          "comeback": 0.36813186813186816,
+          "lead_changes": 1.215,
+          "hijacks": 7.055,
+          "hijack_landed": 0.406094968107725,
+          "strong_win": 0.85,
+          "weak_win": 0.06
+        },
+        "seconds": 53.7
+      },
+      "swap_alt": {
+        "even": {
+          "games": 300,
+          "p0_win": 0.31,
+          "p1_win": 0.46,
+          "draw": 0.23,
+          "turns": 48.03333333333333,
+          "comeback": 0.5151515151515151,
+          "lead_changes": 1.82,
+          "hijacks": 6.95,
+          "hijack_landed": 0.437410071942446
+        },
+        "skill": {
+          "games": 200,
+          "p0_win": 0.365,
+          "p1_win": 0.42,
+          "draw": 0.215,
+          "turns": 47.165,
+          "comeback": 0.36942675159235666,
+          "lead_changes": 1.19,
+          "hijacks": 6.78,
+          "hijack_landed": 0.3613569321533923,
+          "strong_win": 0.745,
+          "weak_win": 0.04
+        },
+        "seconds": 48.8
+      },
+      "swap_behind": {
+        "even": {
+          "games": 300,
+          "p0_win": 0.25333333333333335,
+          "p1_win": 0.3466666666666667,
+          "draw": 0.4,
+          "turns": 51.31666666666667,
+          "comeback": 0.5444444444444444,
+          "lead_changes": 1.8766666666666667,
+          "hijacks": 7.453333333333333,
+          "hijack_landed": 0.4069767441860465
+        },
+        "skill": {
+          "games": 200,
+          "p0_win": 0.32,
+          "p1_win": 0.33,
+          "draw": 0.35,
+          "turns": 47.81,
+          "comeback": 0.34615384615384615,
+          "lead_changes": 1.205,
+          "hijacks": 6.725,
+          "hijack_landed": 0.34572490706319703,
+          "strong_win": 0.625,
+          "weak_win": 0.025
+        },
+        "seconds": 49.1
+      },
+      "place_behind": {
+        "even": {
+          "games": 300,
+          "p0_win": 0.22666666666666666,
+          "p1_win": 0.3466666666666667,
+          "draw": 0.4266666666666667,
+          "turns": 57.48,
+          "comeback": 0.4186046511627907,
+          "lead_changes": 1.6466666666666667,
+          "hijacks": 8.343333333333334,
+          "hijack_landed": 0.39832201358369956
+        },
+        "skill": {
+          "games": 200,
+          "p0_win": 0.385,
+          "p1_win": 0.465,
+          "draw": 0.15,
+          "turns": 48.0,
+          "comeback": 0.4,
+          "lead_changes": 1.13,
+          "hijacks": 6.71,
+          "hijack_landed": 0.4061102831594635,
+          "strong_win": 0.825,
+          "weak_win": 0.025
+        },
+        "seconds": 123.5
+      },
+      "swap_guard_alt": {
+        "even": {
+          "games": 300,
+          "p0_win": 0.3233333333333333,
+          "p1_win": 0.4666666666666667,
+          "draw": 0.21,
+          "turns": 51.63,
+          "comeback": 0.4430379746835443,
+          "lead_changes": 1.6266666666666667,
+          "hijacks": 6.273333333333333,
+          "hijack_landed": 0.4436769394261424
+        },
+        "skill": {
+          "games": 200,
+          "p0_win": 0.475,
+          "p1_win": 0.45,
+          "draw": 0.075,
+          "turns": 51.56,
+          "comeback": 0.4,
+          "lead_changes": 1.355,
+          "hijacks": 6.725,
+          "hijack_landed": 0.42230483271375463,
+          "strong_win": 0.87,
+          "weak_win": 0.055
+        },
+        "seconds": 43.6
+      }
+    },
+    "99": {
+      "classic": {
+        "even": {
+          "games": 300,
+          "p0_win": 0.36,
+          "p1_win": 0.28,
+          "draw": 0.36,
+          "turns": 58.96,
+          "comeback": 0.3385416666666667,
+          "lead_changes": 1.4766666666666666,
+          "hijacks": 0.0,
+          "hijack_landed": 0.0
+        },
+        "skill": {
+          "games": 200,
+          "p0_win": 0.45,
+          "p1_win": 0.415,
+          "draw": 0.135,
+          "turns": 54.1,
+          "comeback": 0.3583815028901734,
+          "lead_changes": 1.275,
+          "hijacks": 0.0,
+          "hijack_landed": 0.0,
+          "strong_win": 0.805,
+          "weak_win": 0.06
+        },
+        "seconds": 50.6
+      },
+      "swap_guard": {
+        "even": {
+          "games": 300,
+          "p0_win": 0.3933333333333333,
+          "p1_win": 0.31333333333333335,
+          "draw": 0.29333333333333333,
+          "turns": 55.22666666666667,
+          "comeback": 0.419811320754717,
+          "lead_changes": 1.7066666666666668,
+          "hijacks": 6.85,
+          "hijack_landed": 0.4345498783454988
+        },
+        "skill": {
+          "games": 200,
+          "p0_win": 0.495,
+          "p1_win": 0.4,
+          "draw": 0.105,
+          "turns": 52.595,
+          "comeback": 0.3687150837988827,
+          "lead_changes": 1.22,
+          "hijacks": 6.915,
+          "hijack_landed": 0.4005784526391902,
+          "strong_win": 0.86,
+          "weak_win": 0.035
+        },
+        "seconds": 49.7
+      },
+      "swap_guard_alt": {
+        "even": {
+          "games": 300,
+          "p0_win": 0.38666666666666666,
+          "p1_win": 0.4,
+          "draw": 0.21333333333333335,
+          "turns": 51.943333333333335,
+          "comeback": 0.5042372881355932,
+          "lead_changes": 1.8066666666666666,
+          "hijacks": 6.226666666666667,
+          "hijack_landed": 0.45021413276231265
+        },
+        "skill": {
+          "games": 200,
+          "p0_win": 0.45,
+          "p1_win": 0.45,
+          "draw": 0.1,
+          "turns": 51.125,
+          "comeback": 0.43333333333333335,
+          "lead_changes": 1.4,
+          "hijacks": 6.725,
+          "hijack_landed": 0.40817843866171005,
+          "strong_win": 0.84,
+          "weak_win": 0.06
+        },
+        "seconds": 42.7
+      },
+      "swap_guard_behind": {
+        "even": {
+          "games": 300,
+          "p0_win": 0.2633333333333333,
+          "p1_win": 0.35333333333333333,
+          "draw": 0.38333333333333336,
+          "turns": 58.526666666666664,
+          "comeback": 0.5351351351351351,
+          "lead_changes": 1.87,
+          "hijacks": 7.46,
+          "hijack_landed": 0.40035746201966044
+        },
+        "skill": {
+          "games": 200,
+          "p0_win": 0.42,
+          "p1_win": 0.47,
+          "draw": 0.11,
+          "turns": 55.31,
+          "comeback": 0.42134831460674155,
+          "lead_changes": 1.355,
+          "hijacks": 7.54,
+          "hijack_landed": 0.38726790450928383,
+          "strong_win": 0.835,
+          "weak_win": 0.055
+        },
+        "seconds": 50.4
+      }
+    }
+  }
+}
