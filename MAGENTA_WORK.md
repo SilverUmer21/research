@@ -1,6 +1,6 @@
 # Magenta work: Vesper refined, and a game to put it in
 
-Branch `ccr-58f4b888-im2lf6`, built on top of [`after-light-work`](AFTERLIGHT_WORK.md). It holds three
+Branch `ccr-58f4b888-im2lf6`, built on top of [`after-light-work`](AFTERLIGHT_WORK.md). It holds four
 pieces, in reading order:
 
 1. **[Learned concepts](docs/afterlight-study/LEARNED-CONCEPTS.md).** What makes the magenta Vesper
@@ -14,5 +14,12 @@ pieces, in reading order:
    mandatory captures turn that into traps. It is backed by bot experiments on the real BarahAI engine.
 
 ![Final beat of the film: the Vesper on the Barah Goti lattice](vesper/renders/board.png)
+
+4. **[THE HIJACK](hijack_film/README.md).** The story film with a blitzedo reveal, made after owner feedback
+   ("sounds need work, some actual story, blitzedo reveal, insane mix of colors"). Vesper starts cold, steals
+   cyan and orange from its rivals, captures Glacier with a slow-motion boost-jump, floods the board, and the
+   3D lava **blitzedo** letters erupt. It has a new trailer-style score. **[Watch it](hijack_film/HIJACK_30s.mp4).**
+
+![THE HIJACK contact sheet](hijack_film/HIJACK_contact_sheet.png)
 
 All of it is a proposal for owner review. The Afterlight originals in `afterlight/` are unchanged.
