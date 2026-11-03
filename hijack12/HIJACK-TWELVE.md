@@ -71,12 +71,13 @@ What we found no example of (inference, not exhaustive):
    answers on the next turn. *(We also tested alternating openers and a trailing-player opener; see §4.)*
 3. **What a Switch turn is.** On your Switch turn, **instead of your own move**, you move **one rival
    bead one step** along a line to an empty point. It can't capture, and it can't be passed.
-4. **Then the rival plays normally**, under the normal rules. If your hijack gave them a capture,
-   they **must** take it.
-5. **Anchor.** You can't hijack the bead your rival moved on their last turn. Their newest move
-   stays theirs. This rule removed the opener's advantage in testing (§4).
-6. **Reciprocal.** The other player's Switch turn follows in the same window. Every window gives
-   each player exactly one hijack.
+4. **Order of a window.** The opener hijacks, the other player hijacks back on the very next turn,
+   then normal play resumes with the opener. Every window gives each player exactly one hijack
+   (reciprocal).
+5. **Traps.** A hijacked bead obeys the normal rules on its owner's next normal turn. If your hijack
+   left them a capture, they **must** take it, and that is how the trap in the picture works.
+6. **Anchor.** You can't hijack the bead your rival moved on their last normal turn. Their newest
+   move stays theirs. This rule removed the opener's advantage in testing (§4).
 7. **Readability.** The bead keeps its body colour (ownership). During the hijack, your vein
    colour flows along the line into it, and its headlight changes to your colour (control).
 
