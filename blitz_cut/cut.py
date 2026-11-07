@@ -132,6 +132,7 @@ T_WRITE0, T_WRITE1 = BEAT, 4 * BEAT - .07        # seconds after LOGO_T: write o
 T_FILL0, T_FILL1 = 4 * BEAT, 5 * BEAT              # crystallise on the bar-16 downbeat
 T_SWEEP0, T_SWEEP1 = 5.4 * BEAT, 7. * BEAT
 T_HEART = 6.5 * BEAT
+T_RED0, T_RED1 = 4.6 * BEAT, 5.6 * BEAT          # the glass bleeds into brand red
 
 
 def logo_clock():
@@ -305,7 +306,7 @@ def uniforms(self, p, t, eye, st, reflection=0.):
     _orig_uniforms(self, p, t, eye, st, reflection)
     w = WALL[0]; fl, gl, zb, pump, hue = post(w)
     for k, v in (('travel', travel(t)), ('speed', speed(t)), ('beatPulse', beat_pulse(w)), ('ringOn', 0.),
-                 ('cutFlash', fl * .22), ('glitch', gl), ('zoomBlur', zb), ('pump', pump), ('flashTint', hue)):
+                 ('brandRed', sm(w - LOGO_T, T_RED0, T_RED1)), ('cutFlash', fl * .22), ('glitch', gl), ('zoomBlur', zb), ('pump', pump), ('flashTint', hue)):
         self.g.u(p, k, v)
 
 

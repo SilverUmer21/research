@@ -9,7 +9,7 @@ void main(){
  float head=exp(-Age*9.);
  float loopFade=Vis<.9?exp(-Age*2.5):1.;          // the launch loop fades, the letters stay
  float dash=pow(.5+.5*sin(Tau*55.-time*14.),6.);
- vec3 hue=mix(c,ring(Tau*.9-time*.4+Cid*.33),solid*.7);
+ vec3 hue=toRed(mix(c,ring(Tau*.9-time*.4+Cid*.33),solid*.7),Tau*.8-time*.5);
  float I=(.55+1.7*head+.9*dash*solid+.6*beatP)*loopFade;
- frag=vec4(heat(hue,.62+.35*head)*I,clamp(I,0.,1.));
+ frag=vec4(heat(hue,(.62+.35*head)*(1.-.22*brandRed))*I,clamp(I,0.,1.));
 }

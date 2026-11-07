@@ -54,6 +54,7 @@ void main(){
  float floodEdge=exp(-sq((fd-flood.z)/1.2))*step(.1,flood.z);
  latt=mix(latt,heat(ring(fd*.05+atan(P.y-flood.y,P.x-flood.x)*.16-time*.35),.62+.3*pulseRun),owned);
  latt+=heat(vec3(1.),.9)*floodEdge*.6;
+ latt=mix(latt,heat(RED(B.x*.03+time*.2),.55+.25*pulseRun),brandRed*.8);   // the whole board turns brand red
  col+=latt*(lineCore*.9+lineGlow*.10)*(1.+beatPulse*1.6);
  vec2 node=abs(gx-round(gx))*boardSpacing;float nd=length(node);
  float onBoard=step(abs(round(g.y)),2.);
@@ -87,7 +88,7 @@ void main(){
    vec2 qa=vec2(dot(q,nozzle.zw),dot(q,vec2(-nozzle.w,nozzle.z)));
    col+=prism(time*.7+float(k)*.5,vesperW)*exp(-qa.x*qa.x/(len*len*.25+.2)-qa.y*qa.y*4.)*(vBoost*.22+flash*.5);
  }
- col+=ring(P.y*.05+time*.15)*exp(-sq((P.x-21.)/2.2)-pow(abs(P.y)/7.5,8.))*logoI*.16;
+ col+=toRed(ring(P.y*.05+time*.15),P.y*.05)*exp(-sq((P.x-21.)/2.2)-pow(abs(P.y)/7.5,8.))*logoI*.16;
  for(int i=0;i<4;i++){
    if(rings[i].w<0.)continue;
    float age=rings[i].w;float d=abs(length(P-rings[i].xz)-age*7.);

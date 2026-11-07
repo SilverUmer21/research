@@ -33,6 +33,10 @@ vec3 prism(float n,vec3 w){
  float all3=min(w.x,min(w.y,w.z));
  return mix(sep,ring(n),all3*.85);
 }
+uniform float brandRed;          // 0 = prism, 1 = blitzedo brand red
+// Brand red with life in it: deep crimson to scarlet, never a flat fill.
+vec3 RED(float n){n=.5+.5*sin(n*6.2831);return mix(lin(vec3(.62,.0,.03)),lin(vec3(1.,.10,.04)),n);}
+vec3 toRed(vec3 c,float n){return mix(c,RED(n),brandRed);}
 vec3 avgEnergy(vec3 w){float s=w.x+w.y+w.z;return s<.001?MAG():(MAG()*w.x+CYA()*w.y+ORA()*w.z)/s;}
 // Temperature for any hue: crust, deep, hue, hot, white-hot.
 vec3 heat(vec3 h,float t){

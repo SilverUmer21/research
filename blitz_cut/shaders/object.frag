@@ -51,7 +51,7 @@ void main(){
  // Light from the logo letters once they burn.
  for(int i=0;i<3;i++){
    vec3 dl=logoLights[i].xyz-W;float dd=dot(dl,dl);
-   col+=base*ring(float(i)*.33+time*.15)*logoI*logoLights[i].w*max(0.,dot(n,normalize(dl)))*14./(1.+dd*.35);
+   col+=base*toRed(ring(float(i)*.33+time*.15),float(i)*.3)*logoI*logoLights[i].w*max(0.,dot(n,normalize(dl)))*14./(1.+dd*.35);
  }
  float rim=pow(1.-max(0.,dot(n,v)),3.5)*max(0.,dot(n,normalize(vec3(-.5,.3,-.8))));
  col+=mix(lin(vec3(.40,.32,.9)),accent,.5*alive)*rim*.75*wake;
