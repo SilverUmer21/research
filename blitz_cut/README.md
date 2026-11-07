@@ -60,7 +60,9 @@ camera angles, shots, transitions and animations, all synced to the beat.
 ```bash
 cd blitz_cut
 python3 cut.py --stills --width 1920 --height 1080       # stills -> renders/
-python3 cut.py --width 2560 --height 1440 --subframes 3  # picture (~90-100 min on 4 CPU threads)
+python3 cut.py --width 2560 --height 1440 --subframes 3  # picture (~50-100 min on 4 CPU threads)
+# the logo section can be re-rendered on its own and spliced in:
+#   python3 cut.py --width 2560 --height 1440 --start 26.2667 --seconds 3.7333 --output BLITZ_logo.mp4
 python3 score.py && python3 master.py                    # -> BLITZ_30s.mp4
 # needs: pip install fonttools mapbox_earcut scipy
 ```

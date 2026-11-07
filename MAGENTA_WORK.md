@@ -1,6 +1,6 @@
 # Magenta work: Vesper refined, and a game to put it in
 
-Branch `ccr-58f4b888-im2lf6`, built on top of [`after-light-work`](AFTERLIGHT_WORK.md). It holds four
+Branch `ccr-58f4b888-im2lf6`, built on top of [`after-light-work`](AFTERLIGHT_WORK.md). It holds five
 pieces, in reading order:
 
 1. **[Learned concepts](docs/afterlight-study/LEARNED-CONCEPTS.md).** What makes the magenta Vesper
@@ -21,5 +21,13 @@ pieces, in reading order:
    3D lava **blitzedo** letters erupt. It has a new trailer-style score. **[Watch it](hijack_film/HIJACK_30s.mp4).**
 
 ![THE HIJACK contact sheet](hijack_film/HIJACK_contact_sheet.png)
+
+5. **[BLITZ CUT](blitz_cut/README.md).** A beat-synced 128 BPM edit. It opens on slow cinematic shots behind
+   the cars and boosters, then a build with a 3-2-1 countdown, and a fast drop on an endless Barah Goti highway
+   (launch, whip pans, crash zoom, top-down spin, pass-by, barrel roll, overtake, fly-over, glitch montage),
+   a slow-motion ramp, and a light-painted blitzedo. The cars' comets write it, it crystallises into lava-filled
+   glass, and it resolves into brand red. **[Watch it](blitz_cut/BLITZ_30s.mp4).**
+
+![BLITZ CUT contact sheet](blitz_cut/BLITZ_contact_sheet.png)
 
 All of it is a proposal for owner review. The Afterlight originals in `afterlight/` are unchanged.
