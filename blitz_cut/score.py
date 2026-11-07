@@ -164,22 +164,48 @@ add(C.RAMP0 + .3, lp(drone, 260) * np.minimum(q / .4, 1) * np.minimum((d - q) / 
 Y.heartbeat(C.RAMP0 + .55, 1.); Y.heartbeat(C.RAMP0 + 1.35, .9)
 qq = secs(d); add(C.RAMP0 + .3, sine(NOTE(Fn + 48) * (1 + .002 * np.sin(qq * 3)), d) * (qq / d) ** 2, .03, rev=.8)
 Y.reverse_swell(C.LOGO_T, 1.3, 1.2)
-Y.impact(C.LOGO_T, 1.4); Y.braam(C.LOGO_T, Fn, 1.6, 3.6, 3200., 0, chord=(0, 7, 12, 16, 18, 23)); Y.sub_drop(C.LOGO_T, 90, 22, 3., 1.2)
+# ---- the light-painted blitzedo: launch, writing, crystallise, sweep, heartbeat
+L0 = C.LOGO_T; W0, W1 = L0 + C.T_WRITE0, L0 + C.T_WRITE1
+Y.impact(L0, .8, 0, .7); Y.sub_drop(L0, 80, 26, 1.6, .7)
+for cid, pan in ((0, 0.), (1, .6), (2, -.6)):               # three comets leave the nozzles
+    Y.zap(L0 + .02 * cid, C.T_WRITE0 + .1, pan * .3, pan, .9)
+    Y.reverse_swell(W0, .45, .35)
+import logo_vec as LV
+pens = {0: (NOTE(Fn + 52), -.6, -.25), 1: (NOTE(Fn + 55), -.15, .25), 2: (NOTE(Fn + 51), .35, .7)}
+for cid, (hz, p0, p1) in pens.items():                       # the laser pens, panning as they write
+    d = W1 - W0; q = secs(d); x = q / d
+    tone = np.sin(2 * np.pi * np.cumsum(hz * (1 + .012 * np.sin(2 * np.pi * 11 * q)) * (1 + .06 * x)) / SR)
+    sizzle = bp(noise(d), 3000, 9000) * (.5 + .5 * np.sin(2 * np.pi * 23 * q) ** 2)
+    cr = (rng.random(len(q)) < .006) * rng.normal(size=len(q)); cr = bp(np.convolve(cr, np.exp(-np.arange(90) / 9.), 'same'), 2000, 9000)
+    sgn = (tone * .5 + sizzle * .35 + cr * .7) * np.minimum(x / .05, 1) * np.minimum((1 - x) / .05, 1)
+    for k in range(8):
+        a, b = int(len(q) * k / 8), int(len(q) * (k + 1) / 8)
+        place(Y.dry, W0 + a / SR, sgn[a:b] * np.hanning(b - a) * 2, .09, p0 + (p1 - p0) * (k + .5) / 8)
+    place(Y.send, W0, sgn, .05, (p0 + p1) / 2)
 yaman = [0, 2, 4, 6, 7, 9, 11, 12]
-for i in range(8):
-    tl = C.LOGO_T + i * B / 4 + .02; pan = -.7 + 1.4 * i / 7
-    Y.pluck_bell(tl, NOTE(Fn + 36 + yaman[i]), .07, pan); Y.taiko(tl, .28, pan)
-    add(tl, hp(noise(.12), 1500) * np.exp(-secs(.12) * 40), .1, pan, rev=.4)
-q = secs(3.5); add(C.LOGO_T, lp(noise(3.5), 150) * np.exp(-q * .8) * 2., .3, rev=.3)
-Y.braam(bar(16), Fn, 1.1, 2.4, 2600., 0, chord=(0, 7, 12, 16, 19))
+for cid, letters in LV.COMETS.items():                       # a bell as each letter closes
+    for j, li in enumerate(letters):
+        tl = W0 + (W1 - W0) * (j + 1) / len(letters)
+        Y.pluck_bell(tl, NOTE(Fn + 36 + yaman[li]), .06, -.7 + 1.4 * li / 7); Y.taiko(tl, .2, -.7 + 1.4 * li / 7)
+q = secs(3.6); add(L0, lp(noise(3.6), 140) * np.exp(-q * .9) * 1.6, .22, rev=.3)
+# Crystallise on the bar-16 downbeat.
+Y.reverse_swell(bar(16), .9, 1.1)
+Y.impact(bar(16), 1.5); Y.sub_drop(bar(16), 100, 22, 3.0, 1.2)
+Y.braam(bar(16), Fn, 1.5, 3.4, 3400., 0, chord=(0, 7, 12, 16, 18, 23))
+for k in range(70):                                          # crystal pings racing left to right with the fill
+    tk = bar(16) + (k / 70) ** 1.2 * B * 1.1; hz = 2200 + rng.random() * 6000; qq = secs(.4)
+    add(tk, np.sin(2 * np.pi * hz * qq) * np.exp(-qq * (14 + rng.random() * 20)), .028, -.8 + 1.6 * k / 70, rev=.6)
 for iv in (0, 7, 16, 18, 23):
     qd = secs(3.); add(bar(16), sine(NOTE(Fn + 36 + iv), 3.) * np.exp(-qd * .7) * np.minimum(qd / .2, 1), .03, rev=.8)
-q = secs(1.); x = np.linspace(0, 1, len(q))
-shing = sweep_bp(noise(1.), 2000 + 9000 * x, 4) * np.sin(np.pi * x) + sine(3000 + 4000 * x, 1.) * np.sin(np.pi * x) * .15
+q = secs(C.T_SWEEP1 - C.T_SWEEP0 + .3); x = np.linspace(0, 1, len(q))   # the light sweep
+shing = sweep_bp(noise(len(q) / SR), 2000 + 9000 * x, 4) * np.sin(np.pi * x) + sine(3000 + 4000 * x, len(q) / SR) * np.sin(np.pi * x) * .15
 for k in range(6):
     a, b = int(len(q) * k / 6), int(len(q) * (k + 1) / 6)
-    place(Y.dry, bar(16) + a / SR, shing[a:b] * np.hanning(b - a) * 2, .14, -.7 + 1.4 * (k + .5) / 6)
-Y.heartbeat(29.2, .6)
+    place(Y.dry, L0 + C.T_SWEEP0 + a / SR, shing[a:b] * np.hanning(b - a) * 2, .14, -.7 + 1.4 * (k + .5) / 6)
+th = L0 + C.T_HEART                                          # the heartbeat runs through every letter
+Y.heartbeat(th, 1.1)
+for iv in (0, 12, 19, 24, 28):
+    qd = secs(1.4); add(th + .05, sine(NOTE(Fn + 36 + iv), 1.4) * np.exp(-qd * 1.6) * np.minimum(qd / .05, 1), .025, rev=.8)
 Bmix = render_bus()
 
 # ================================================================= master bus

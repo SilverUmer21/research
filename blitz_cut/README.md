@@ -25,7 +25,8 @@ camera angles, shots, transitions and animations, all synced to the beat.
 | 12 | 20.6–22.5 s | **Overtake:** Vesper surges past Cinder; a drone dives over the pack | |
 | 13 | 22.5–24.4 s | **Glitch montage:** eight half-beat cuts with alternating whips and slice glitches | Stutter repeats on the last two beats |
 | 14 | 24.4–26.25 s | **Slow motion:** time ramps to 20%, a slow arc around Vesper as the race brakes | Tape stop, drone, slow heartbeats, reverse swell |
-| 15–16 | 26.25–30 s | **blitzedo:** the letters slam up on 16th notes in molten multi-colour, then a light sweep | Impact, braam, a bell per letter in F Yaman, final chord, shimmer |
+| 15 | 26.25–28.1 s | **Light-painted blitzedo:** each car fires a comet (magenta, cyan, orange) out of its nozzles. The comets loop over the pack and write the word in the air along the real letter outlines, on beats 2–4, shedding sparks | Comet zips, a sizzling laser-pen voice per comet panning as it writes, a bell as each letter closes (F Yaman) |
+| 16 | 28.1–30 s | **Crystallise:** on the downbeat the strokes grow into thick glass letters, left to right. Two layers of prism lava flow inside at different depths, hearts glow in the bowls of b, e, d and o, chrome-prism bevels, and the strokes stay on as neon outlines with pulses. Then a light sweep, and a heartbeat wave runs through every letter | Reverse swell, glass impact, braam chord, a cascade of crystal pings, sweep shimmer, final heartbeat and chord bloom |
 
 ## How it's built
 
@@ -42,6 +43,13 @@ camera angles, shots, transitions and animations, all synced to the beat.
     two-frame cut flashes, zoom blur on crash zooms, the drop and the slam, slice glitch and
     chromatic split on the strobe and montage.
   - **Motion graphics:** per-beat name cards and the 3-2-1 countdown are drawn as overlays.
+- **`logo_vec.py`** builds the reveal from the font's real vector outlines (fontTools):
+  - glass letters triangulated with their counters (earcut), with a bevel ring, sides and back
+  - the three comet paths, where every vertex knows when the head reaches it
+  - 2,400 sparks, each with its own emission time
+
+  The shaders are `glasslogo.frag` (parallax lava veins, bowl hearts, a crystallising fill front,
+  the sweep and the heartbeat wave), `stroke.*` (the light-painting) and `lspark.*`.
 - **`score.py`** builds the track on the same grid with **`synth.py`** (the story film's NumPy and
   SciPy instruments). Part A (to bar 14) is mixed, then stuttered, gated and tape-stopped. Part B (the
   slow-motion bar and the logo) is mixed separately and summed. `master.py` masters to −14 LUFS /
@@ -54,4 +62,5 @@ cd blitz_cut
 python3 cut.py --stills --width 1920 --height 1080       # stills -> renders/
 python3 cut.py --width 2560 --height 1440 --subframes 3  # picture (~90-100 min on 4 CPU threads)
 python3 score.py && python3 master.py                    # -> BLITZ_30s.mp4
+# needs: pip install fonttools mapbox_earcut scipy
 ```

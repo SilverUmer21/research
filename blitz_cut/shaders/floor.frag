@@ -28,7 +28,7 @@ void main(){
  vec2 P=W.xz;vec2 B=P+vec2(travel,0.);
  float wet=smoothstep(.45,.7,fbm(vec3(B*.22,1.3)));
  vec2 uv=gl_FragCoord.xy/resolution;vec3 reflected=vec3(0.);
- float blur=mix(.0030,.0008,wet);
+ float blur=mix(.0030,.0008,wet)*(1.+3.*smoothstep(15.,19.,P.x)*logoI);
  vec2 ripple=vec2(noise3(vec3(B*3.,time*.5)),noise3(vec3(B*3.+9.,time*.5)))-.5;
  for(int k=0;k<6;k++){float a=float(k)*1.0472;reflected+=texture(reflectionMap,uv+vec2(cos(a),sin(a))*blur+ripple*.004*wet).rgb/6.;}
  float fr=pow(1.-abs(v.y),4.);
@@ -87,7 +87,7 @@ void main(){
    vec2 qa=vec2(dot(q,nozzle.zw),dot(q,vec2(-nozzle.w,nozzle.z)));
    col+=prism(time*.7+float(k)*.5,vesperW)*exp(-qa.x*qa.x/(len*len*.25+.2)-qa.y*qa.y*4.)*(vBoost*.22+flash*.5);
  }
- col+=ring(P.y*.05+time*.15)*exp(-sq((P.x-21.)/2.2)-pow(abs(P.y)/7.5,8.))*logoI*.35;
+ col+=ring(P.y*.05+time*.15)*exp(-sq((P.x-21.)/2.2)-pow(abs(P.y)/7.5,8.))*logoI*.16;
  for(int i=0;i<4;i++){
    if(rings[i].w<0.)continue;
    float age=rings[i].w;float d=abs(length(P-rings[i].xz)-age*7.);

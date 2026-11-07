@@ -127,9 +127,21 @@ def car_state(v, s):
     return st
 
 
+# ------------------------------------------------------------------ the light-painted blitzedo
+T_WRITE0, T_WRITE1 = BEAT, 4 * BEAT - .07        # seconds after LOGO_T: write on beats 2-4
+T_FILL0, T_FILL1 = 4 * BEAT, 5 * BEAT              # crystallise on the bar-16 downbeat
+T_SWEEP0, T_SWEEP1 = 5.4 * BEAT, 7. * BEAT
+T_HEART = 6.5 * BEAT
+
+
+def logo_clock():
+    return WALL[0] - LOGO_T
+
+
 def logo_state(s):
-    w = WALL[0]
-    return dict(time=(w - LOGO_T) * 1.1, I=sm(w, LOGO_T - .05, LOGO_T + .4), settle=sm(w, LOGO_T + .8, bar(16)), sweep=(w - bar(16)) / .8)
+    tn = logo_clock()
+    I = .45 * sm(tn, 0., T_WRITE1) + 1.1 * sm(tn, T_FILL0, T_FILL1) if tn > 0 else 0.
+    return dict(time=-1., I=I, settle=0., sweep=0.)    # time < 0 retires the old voxel logo
 
 
 # ------------------------------------------------------------------ the shots
@@ -154,7 +166,7 @@ SHOTS += [(bar(8, 3), DROP, 'black', 0, 0),
 _montage = ['three_rear', 'wheel_cu', 'top_spin', 'nozzle_cu', 'front_chase', 'heart_cu', 'side_track', 'vesper_face']
 for k in range(8):
     SHOTS.append((bar(13, k * .5), bar(13, (k + 1) * .5), _montage[k], 30 * (1 if k % 2 else -1), .5))
-SHOTS += [(RAMP0, RAMP1, 'slowmo', 0, 1.0), (LOGO_T, bar(16), 'logo_slam', 0, 1.4), (bar(16), DURATION, 'logo_hold', 0, .4)]
+SHOTS += [(RAMP0, RAMP1, 'slowmo', 0, 1.0), (LOGO_T, bar(16), 'logo_write', 0, .8), (bar(16), DURATION, 'logo_reveal', 0, 1.3)]
 GLITCH = [(bar(8), bar(8, 3)), (bar(13), RAMP0)]
 
 
@@ -231,10 +243,10 @@ def camera_for(name, q, t, s, a0):
         tgt = V((1.5 + 3. * q, .6, 0)); eye = V((-10. + 14. * q, 6. - 3.5 * q, 2.)); fov = 40
     elif name == 'slowmo':          # slow arc from the rear quarter to the side, in slow motion
         tgt = V((-1.2, .75, 0)); eye = orbit(tgt, 7.5 - 1.2 * q, 150 - 50 * q, 8 + 4 * q); fov = 30
-    elif name == 'logo_slam':
-        tgt = np.array([F.LOGO_X, 1.8, -.6]); eye = np.array([V()[0] - 5.5 + 2.0 * q, 2.4 + .8 * q, 4.2 - .3 * q]); fov = 40 - 3 * q
-    else:                           # logo_hold
-        tgt = np.array([F.LOGO_X, 1.9, -.4]); eye = np.array([V()[0] - 3.4 + 1.2 * q, 3.2 + .3 * q, 3.9]); fov = 37 - 2 * q
+    elif name == 'logo_write':      # behind the pack: comets loop out of the nozzles and write ahead
+        tgt = np.array([F.LOGO_X - 4. + 4. * smooth(q), 2.4 + .5 * q, -1. + 1. * smooth(q)]); eye = np.array([V()[0] - 6.0 + 7.5 * smooth(q), 1.4 + 1.3 * q, 4.4 - 2.0 * q]); fov = 50 - 12 * smooth(q)
+    else:                           # logo_reveal: frontal hero with a slow parallax drift through the glass
+        tgt = np.array([F.LOGO_X, 2.9, 0.]); eye = np.array([6.8 + 1.4 * q, 2.6 + .25 * q, 2.2 - 2.4 * q]); fov = 36 - 2. * q
     return np.asarray(eye, float), np.asarray(tgt, float), fov, roll
 
 
@@ -266,7 +278,7 @@ def post(t):
     zb = 0.
     if name in ('wheel_crash', 'launch'):
         zb = .9 * math.exp(-(t - a0) * 5.)
-    zb += .6 * gauss(t, DROP, .1) + .5 * math.exp(-max(0., t - LOGO_T) * 6) * (t >= LOGO_T)
+    zb += .6 * gauss(t, DROP, .1) + .35 * math.exp(-max(0., t - bar(16)) * 7) * (t >= bar(16))
     pump = .8 * beat_pulse(t) * (t >= BUILD)
     hue = [(1., .55, .9), (.6, .95, 1.), (1., .75, .55)][i % 3]
     if name == 'black':
@@ -355,12 +367,53 @@ def overlay(im, t):
 STILLS = [(2.5, 'rear_dolly'), (6.6, 'rear_orbit'), (8.4, 'nozzle_macro'), (10.0, 'card_cinder'), (11.5, 'heart_cu'), (13.3, 'countdown'),
           (15.25, 'launch'), (16.3, 'side_track'), (17.15, 'wheel_crash'), (17.6, 'top_spin'), (18.1, 'front_chase'), (18.55, 'passby'),
           (19.4, 'barrel'), (20.1, 'nozzle_speed'), (21.2, 'overtake'), (22.0, 'flyover'), (23.1, 'montage'), (25.0, 'slowmo'),
-          (27.0, 'logo_slam'), (29.0, 'logo_hold')]
+          (26.6, 'comets'), (27.3, 'writing'), (27.9, 'written'), (28.3, 'crystal'), (28.9, 'sweep'), (29.45, 'heartbeat')]
 
 
 def make_renderer(w, h):
+    import logo_vec as LV
     r = F.Renderer(w, h); r.world.burst.count = 0     # no capture in this cut
+    g = r.g; P = lambda vs, fs: g.program(F.shader(vs), F.shader(fs))
+    r.glassp = P('object.vert', 'glasslogo.frag'); r.strokep = P('stroke.vert', 'stroke.frag'); r.lsparkp = P('lspark.vert', 'lspark.frag')
+    letters, gl, info = LV.build(FONT.replace('BarlowCondensed-Bold.ttf', 'BarlowCondensed-Bold.ttf'), F.LOGO_X)
+    s_end = tau(LOGO_T) + 5.
+    nozzles = {0: car_pos(VESPER, s_end, (-2.75, .48, 0)), 1: car_pos(GLACIER, s_end, (-2.75, .48, 0)), 2: car_pos(CINDER, s_end, (-2.75, .48, 0))}
+    paths = LV.comet_paths(gl, F.LOGO_X, nozzles, 0., T_WRITE0, T_WRITE1)
+    r.letters = letters; r.strokes = LV.stroke_mesh(paths); r.lsparks = LV.spark_mesh(paths); r.logo_info = info
+    for m in (r.letters, r.strokes, r.lsparks):
+        m.upload(g)
+    print('Light-painted logo:', r.letters.count // 3, 'glass triangles;', r.strokes.count // 3, 'stroke triangles', flush=True)
     return r
+
+
+_orig_scene = F.Renderer.scene
+
+
+def scene(self, t, states, objs, vp, eye, view, reflection):
+    _orig_scene(self, t, states, objs, vp, eye, view, reflection)
+    tn = logo_clock()
+    if tn < 0 or not hasattr(self, 'letters'):
+        return
+    g = self.g; ref = float(reflection); mirror = F.scale(1, -1, 1) if reflection else np.eye(4, dtype=np.float32); vs = states[VESPER]
+    beatP = math.exp(-(tn % BEAT) * 9.)
+    common = (('tnow', tn), ('beatP', beatP), ('solid', sm(tn, T_FILL0 - .05, T_FILL1)))
+    if tn > T_FILL0 - .02:
+        p = self.glassp; self.uniforms(p, t, eye, vs, ref); g.u(p, 'vp', vp); g.u(p, 'lightvp', self.lv)
+        for k, v in common + (('glassFill', sm(tn, T_FILL0, T_FILL1)), ('sweepPos', -2. + 18. * sm(tn, T_SWEEP0, T_SWEEP1)), ('heartWave', 1. if tn > T_HEART else 0.)):
+            g.u(p, k, v)
+        bw = [(u, vv - self.logo_info['base_y'], 0, 1.) for _, u, vv in self.logo_info['bowls']][:4]
+        self.arr(p, 'bowls', bw + [(0, 0, 0, 0)] * (4 - len(bw)), 4)
+        self.letters.draw(p, mirror)
+    g.glEnable(0x0BE2); g.glBlendFunc(0x0302, 1); g.glDepthMask(0)
+    for p, m in ((self.strokep, self.strokes), (self.lsparkp, self.lsparks)):
+        self.uniforms(p, t, eye, vs, ref); g.u(p, 'vp', vp); g.u(p, 'cameraRight', view[0, :3]); g.u(p, 'cameraUp', view[1, :3])
+        for k, v in common:
+            g.u(p, k, v)
+        m.draw(p, np.eye(4, dtype=np.float32))
+    g.glDepthMask(1); g.glDisable(0x0BE2)
+
+
+F.Renderer.scene = scene
 
 
 def main():
